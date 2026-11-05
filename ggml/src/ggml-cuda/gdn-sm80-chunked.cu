@@ -8,7 +8,7 @@
 bool ggml_cuda_gdn_sm80_chunked_enabled() {
     static const bool enabled = [] {
         const char * value = getenv("GGML_CUDA_GDN_SM80_CHUNKED");
-        return value && strcmp(value, "1") == 0;
+        return !value || strcmp(value, "1") == 0;
     }();
     return enabled;
 }

@@ -1,6 +1,0 @@
-#!/bin/sh
-# Packaged SM80 runtime: unsupported hardware/shapes retain the regular CUDA path.
-set -eu
-: "${GGML_CUDA_GDN_SM80_CHUNKED:=1}"
-export GGML_CUDA_GDN_SM80_CHUNKED
-exec "$(dirname "$0")/llama-server.bin" "$@"
